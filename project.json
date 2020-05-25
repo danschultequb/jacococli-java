@@ -1,14 +1,13 @@
 {
   "publisher": "qub",
   "project": "jacococli-java",
-  "version": "3",
+  "version": "19",
   "java": {
-    "version": "1.8",
     "dependencies": [
       {
         "publisher": "qub",
         "project": "javacli-java",
-        "version": "3"
+        "version": "19"
       }
     ]
   }

@@ -2,8 +2,6 @@ package qub;
 
 public class JacocoCliProcessBuilder extends JavaProcessBuilderDecorator<JacocoCliProcessBuilder> implements JacocoCliArguments<JacocoCliProcessBuilder>
 {
-    private Folder outputFolder;
-
     private JacocoCliProcessBuilder(JavaProcessBuilder javaProcessBuilder)
     {
         super(javaProcessBuilder);
@@ -14,11 +12,11 @@ public class JacocoCliProcessBuilder extends JavaProcessBuilderDecorator<JacocoC
      * @param process The Process to get the JavaProcessBuilder from.
      * @return The JavaProcessBuilder.
      */
-    public static Result<JacocoCliProcessBuilder> get(Process process)
+    public static Result<JacocoCliProcessBuilder> create(Process process)
     {
         PreCondition.assertNotNull(process, "process");
 
-        return JacocoCliProcessBuilder.get(process.getProcessFactory());
+        return JacocoCliProcessBuilder.create(process.getProcessFactory());
     }
 
     /**
@@ -26,13 +24,13 @@ public class JacocoCliProcessBuilder extends JavaProcessBuilderDecorator<JacocoC
      * @param processFactory The ProcessFactory to get the JavaProcessBuilder from.
      * @return The JavaProcessBuilder.
      */
-    public static Result<JacocoCliProcessBuilder> get(ProcessFactory processFactory)
+    public static Result<JacocoCliProcessBuilder> create(ProcessFactory processFactory)
     {
         PreCondition.assertNotNull(processFactory, "processFactory");
 
         return Result.create(() ->
         {
-            return new JacocoCliProcessBuilder(JavaProcessBuilder.get(processFactory).await());
+            return new JacocoCliProcessBuilder(JavaProcessBuilder.create(processFactory).await());
         });
     }
 }

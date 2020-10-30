@@ -10,6 +10,8 @@ public interface JacocoCliArguments<T>
      */
     T addArguments(String... arguments);
 
+    Iterable<String> getArguments();
+
     /**
      * Get the path to the folder that this ProcessBuilder will run the executable in.
      * @return The path to the folder that this ProcessBuilder will run the executable in.
@@ -51,8 +53,6 @@ public interface JacocoCliArguments<T>
 
         return this.addJacocoCliJar(jacococliJarFile.getPath());
     }
-
-
 
     /**
      * Add the report argument to the arguments.
@@ -108,12 +108,8 @@ public interface JacocoCliArguments<T>
     {
         PreCondition.assertNotNull(classFile, "classFile");
 
-        Path classFilePath = classFile.getPath();
         final Path workingFolderPath = this.getWorkingFolderPath();
-        if (workingFolderPath != null)
-        {
-            classFilePath = classFilePath.relativeTo(workingFolderPath);
-        }
+        final Path classFilePath = classFile.relativeTo(workingFolderPath);
         return this.addArguments("--classfiles", classFilePath.toString());
     }
 

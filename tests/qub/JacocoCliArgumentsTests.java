@@ -115,7 +115,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final File file = fileSystem.createRoot("/").await()
                         .getFile("rooted/path.jar").await();
                     final T jacocoArguments = creator.run(test);
@@ -207,7 +207,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final File file = fileSystem.createRoot("/").await()
                         .getFile("rooted/path.exec").await();
                     final T jacocoArguments = creator.run(test);
@@ -308,7 +308,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Folder folder = fileSystem.createRoot("/").await()
                         .getFolder("sources").await();
                     final T jacocoArguments = creator.run(test);
@@ -322,7 +322,7 @@ public interface JacocoCliArgumentsTests
             {
                 runner.test("with null coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = null;
                     final Folder sources = root.getFolder("sources").await();
@@ -335,7 +335,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with null sourceFolder", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.None;
                     final Folder sources = null;
@@ -348,7 +348,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with null testFolder and None Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.None;
                     final Folder sources = root.getFolder("sources").await();
@@ -361,7 +361,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with null testFolder and Sources Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.Sources;
                     final Folder sources = root.getFolder("sources").await();
@@ -374,7 +374,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with null testFolder and Tests Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.Tests;
                     final Folder sources = root.getFolder("sources").await();
@@ -387,7 +387,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with null testFolder and All Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.All;
                     final Folder sources = root.getFolder("sources").await();
@@ -400,7 +400,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null testFolder and None Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.None;
                     final Folder sources = root.getFolder("sources").await();
@@ -413,7 +413,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null testFolder and Sources Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.Sources;
                     final Folder sources = root.getFolder("sources").await();
@@ -426,7 +426,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null testFolder and Tests Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.Tests;
                     final Folder sources = root.getFolder("sources").await();
@@ -439,7 +439,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null testFolder and All Coverage", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Root root = fileSystem.createRoot("/").await();
                     final Coverage coverage = Coverage.All;
                     final Folder sources = root.getFolder("sources").await();
@@ -463,7 +463,7 @@ public interface JacocoCliArgumentsTests
 
                 runner.test("with non-null", (Test test) ->
                 {
-                    final InMemoryFileSystem fileSystem = new InMemoryFileSystem(test.getClock());
+                    final InMemoryFileSystem fileSystem = InMemoryFileSystem.create(test.getClock());
                     final Folder htmlFolder = fileSystem.createRoot("/").await()
                         .getFolder("html/folder/").await();
                     final T jacocoArguments = creator.run(test);

@@ -1,13 +1,13 @@
 {
   "publisher": "qub",
   "project": "jacococli-java",
-  "version": "35",
+  "version": "40",
   "java": {
     "dependencies": [
       {
         "publisher": "qub",
         "project": "javacli-java",
-        "version": "35"
+        "version": "40"
       }
     ]
   }

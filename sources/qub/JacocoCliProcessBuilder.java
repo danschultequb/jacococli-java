@@ -12,7 +12,7 @@ public class JacocoCliProcessBuilder extends JavaProcessBuilderDecorator<JacocoC
      * @param process The Process to get the JavaProcessBuilder from.
      * @return The JavaProcessBuilder.
      */
-    public static Result<JacocoCliProcessBuilder> create(Process process)
+    public static Result<JacocoCliProcessBuilder> create(DesktopProcess process)
     {
         PreCondition.assertNotNull(process, "process");
 

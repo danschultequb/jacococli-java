@@ -11,22 +11,22 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/qub/qub/lib-java/versions/91/lib-java.jar!/"/>
+          <root url="jar://C:/qub/qub/lib-java/versions/107/lib-java.jar!/"/>
         </CLASSES>
         <JAVADOC/>
         <SOURCES>
-          <root url="jar://C:/qub/qub/lib-java/versions/91/lib-java.sources.jar!/"/>
+          <root url="jar://C:/qub/qub/lib-java/versions/107/lib-java.sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/qub/qub/javacli-java/versions/40/javacli-java.jar!/"/>
+          <root url="jar://C:/qub/qub/javacli-java/versions/50/javacli-java.jar!/"/>
         </CLASSES>
         <JAVADOC/>
         <SOURCES>
-          <root url="jar://C:/qub/qub/javacli-java/versions/40/javacli-java.sources.jar!/"/>
+          <root url="jar://C:/qub/qub/javacli-java/versions/50/javacli-java.sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>
